@@ -1,0 +1,210 @@
+body {
+  background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Other CSS properties for the body element */
+}
+
+.rounded-container {
+  width: 800px;
+  /* Adjust the width as needed */
+  height: 450px;
+  /* Adjust the height as needed */
+  background-color: #130035;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  /* Adjust the border radius to make it more or less rounded */
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  /* Center content horizontally */
+  padding: 20px;
+  /* Add padding for content inside the container */
+  overflow: hidden;
+}
+
+
+
+/* Center content inside the container */
+.pop-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+
+}
+
+.nested-container {
+  height: 105px;
+  width: 450px;
+  border-radius: 20px;
+  background-color: #FF8C00;
+  box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.7) inset;
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.nested-container:hover {
+    box-shadow: 0 0 20px rgba(39, 0, 0, 0.7) inset;
+}
+  
+  
+
+.popup-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #000000, #090979, #00d4ff);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.5;
+  animation: loop 4s linear infinite;
+  mask-image: linear-gradient(transparent 10%, #000 20%, #000 80%, transparent 90%);
+
+}
+
+.border-glow {
+  box-shadow: 0px 0px 20px rgba(9, 9, 121, 100);
+}
+
+@keyframes loop {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: linear-gradient(90deg, #04881e, #0ce41a);
+  /* Background color for the icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon:hover {
+  transform: translateY(-10px);
+}
+
+.icon a {
+  text-decoration: none;
+  color: #fff;
+  /* Icon link color */
+}
+
+.icon i {
+  font-size: 45px;
+  /* Icon size */
+}
+
+
+
+.popup-container:hover {
+  transform: translateZ(30px) rotateX(-10deg);
+}
+
+/* Google-like search bar styles */
+.google-search-bar {
+  background-color: #f8f9fa; /* Light gray background color */
+  border-radius: 20px; /* Rounded edges */
+  padding: 12px 16px; /* Adjust padding as needed */
+  position: absolute;
+  bottom: 40px; /* Adjust the distance from the bottom */
+  left: 20px; /* Adjust the distance from the left */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  width: 600px; /* Adjust the width as needed */
+}
+
+/* Search input field styles */
+.google-search-bar input {
+  flex: 1; /* Allow the input field to expand and fill available space */
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: transparent; /* Transparent input background */
+}
+
+/* Search icons styles */
+.search-icons {
+  display: flex;
+  gap: 10px; /* Adjust the gap between icons */
+  font-size: 24px;
+  color: #5f6368; /* Icon color */
+}
+
+/* ... (existing CSS styles) ... */
+
+.rectangular-container {
+  width: 300px; /* Adjust the width as needed */
+  height: 70px; /* Adjust the height as needed */
+  background-color: #FF8C00; /* Background color of the rectangular container */
+  border: 2px solid transparent;
+  border-radius: 10px; /* Adjust the border radius as needed */
+  margin: 20px; /* Adjust the gap between the nested and rectangular containers */
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* ... (existing CSS styles) ... */
+
+/* CSS for navigation buttons and slide bar */
+/* CSS for slide bar */
+.slide-bar {
+  display: flex;
+  flex-direction: column; /* Display names vertically */
+  overflow: hidden;
+  max-height: 40px; /* Adjust the maximum height to show one name at a time */
+  transition: max-height 0.3s ease-in-out; /* Smooth transition for expanding/collapsing */
+}
+
+.slide-bar a {
+  text-decoration: none;
+  color: #333; /* Link color */
+  font-weight: bold;
+  height: 0; /* Initially set the height to 0 */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Styling for Font Awesome icons (unchanged) */
+.fa-chevron-left,
+.fa-chevron-right {
+  cursor: pointer;
+}
+
+/* CSS for the weather container */
+.weather-container {
+  background-color: #FF8C00; /* Background color matching the orange color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Adjust padding as needed */
+  margin: 20px; /* Gap between the weather container and other containers */
+  text-align: center; /* Center-align text */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  box-sizing: border-box; /* Include padding and border within the width */
+}
+
